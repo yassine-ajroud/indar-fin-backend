@@ -1,0 +1,70 @@
+<----wishlist---->
+
+1- add new wishlist
+method: POST 
+uri: http://192.168.1.20:8000/api/wishlist/add
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyNTk3MiwiZXhwIjoxNzExMzI2ODcyfQ.j_O4C48foPtp0VLE3FFn_VPK2MwmZn1pqt3p2HaIvgU"
+body: {
+    "userId":"65fdf2932cff2a8189cc7f57",
+    "products":[]
+}
+response:{
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "products": [],
+    "_id": "6600c3b8a7a4bad3c687bf6c",
+    "createdAt": "2024-03-25T00:22:16.726Z",
+    "updatedAt": "2024-03-25T00:22:16.726Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get wishlist by userId
+method: GET 
+uri: http://192.168.1.20:8000/api/wishlist/get
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyNTk3MiwiZXhwIjoxNzExMzI2ODcyfQ.j_O4C48foPtp0VLE3FFn_VPK2MwmZn1pqt3p2HaIvgU"
+body: {
+    "userId":"65fdf2932cff2a8189cc7f57"
+}
+response:{
+    "_id": "6600c3b8a7a4bad3c687bf6c",
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "products": [],
+    "createdAt": "2024-03-25T00:22:16.726Z",
+    "updatedAt": "2024-03-25T00:22:16.726Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- update wishlist 
+method: PUT 
+uri: http://192.168.1.20:8000/api/wishlist/update
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyNTk3MiwiZXhwIjoxNzExMzI2ODcyfQ.j_O4C48foPtp0VLE3FFn_VPK2MwmZn1pqt3p2HaIvgU"
+body: {
+    "id":"6600c3b8a7a4bad3c687bf6c",
+    "products":["65fdf2932cff2a8189cc7f55"]
+}
+response:{
+    "_id": "6600c3b8a7a4bad3c687bf6c",
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "products": [
+        "65fdf2932cff2a8189cc7f55"
+    ],
+    "createdAt": "2024-03-25T00:22:16.726Z",
+    "updatedAt": "2024-03-25T00:25:58.565Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- delete wishlist 
+method: DELETE 
+uri: http://192.168.1.20:8000/api/wishlist/delete
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyNjQ2MiwiZXhwIjoxNzExMzI3MzYyfQ.qybZ79Rv1NkdiE1E48NZXv_tfLyeZLmnHTsvnK2hsz8"
+body: {
+    "id":"6600c3b8a7a4bad3c687bf6c"
+}
+response:{
+    "message": "wishlist deleted successfully"
+}

@@ -1,0 +1,238 @@
+<----Authentication---->
+
+1- register new user
+method: POST 
+uri: http://192.168.1.20:8000/api/register
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "firstName":"yassine",
+    "lastName":"ajroud",
+    "email":"ajroudyassine06@gmail.com",
+    "phone":"55 332 620",
+    "password":"123456"
+     }
+response:{
+    "message": "user Added Successfully",
+    "uId": "65e35725a3377aa6cafa3136"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- login
+method: POST 
+uri: http://192.168.1.20:8000/api/login
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "email":"ajroudyassine06@gmail.com",
+    "password":"123456"
+     }
+response:{
+    "message": "login successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWFzc2luZSIsImlhdCI6MTcwOTQxMDEwNywiZXhwIjoxNzA5NDEzNzA3fQ.IOstTRz2Fp-mqFPojTKnf531MRqcDRDw82XPPFHnCNk",
+    "refreshtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWFzc2luZSIsImlhdCI6MTcwOTQxMDEwNywiZXhwIjoxNzA5NTgyOTA3fQ.xD3fZRBYWf1Wx8TwwzT2pV933sVFqjhjxHYkvJurx5o",
+    "tokenExpiration": "2024-03-02 22:08:27",
+    "Uid": "65e35725a3377aa6cafa3136"
+    }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get user by id
+method: GET 
+uri: http://192.168.1.20:8000/api/users/byId
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "id":"65e377120f7cd5923302b74d"
+}
+response:{
+    "message": "get user successful  ",
+    "user": {
+        "_id": "65e377120f7cd5923302b74d",
+        "firstName": "yassine",
+        "lastName": "ajr",
+        "imageUrl": "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png",
+        "email": "ajroudyassine7@gmail.com",
+        "phone": "55 332 620",
+        "ban": false,
+        "role": "user",
+        "createdAt": "2024-03-02T18:59:30.369Z",
+        "updatedAt": "2024-03-02T20:34:25.618Z",
+        "__v": 0
+    }
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- update user
+method: PUT 
+uri: http://192.168.1.20:8000/api/UpdateProfil
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "id":"65e377120f7cd5923302b74d",
+    "firstName":"yassine",
+    "lastName":"ajr",
+    "email":"ajroudyassine7@gmail.com",
+    "phone":"55 332 620"
+    "address":"M'saken-sousse"
+    }
+response:{
+    "message": "profil updated suuccessful",
+    "userr": {
+        "_id": "65e377120f7cd5923302b74d",
+        "firstName": "yassine",
+        "lastName": "ajr",
+        "imageUrl": "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png",
+        "email": "ajroudyassine7@gmail.com",
+        "phone": "55 332 620",
+        "password": "$2a$10$O3CS9477eYi3u4RyVKHx2O1E1Zn/H9Ngcwsj3K9M2pZCtn7VxN5za",
+        "ban": false,
+        "role": "user",
+        "createdAt": "2024-03-02T18:59:30.369Z",
+        "updatedAt": "2024-03-02T20:34:25.618Z",
+        "__v": 0
+    }
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- get all users
+method: GET 
+uri: http://192.168.1.20:8000/api/users
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "_id": "65e35725a3377aa6cafa3136",
+        "firstName": "yassine",
+        "lastName": "ajroud",
+        "imageUrl": "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png",
+        "email": "ajroudyassine06@gmail.com",
+        "phone": "55 332 620",
+        "ban": false,
+        "role": "user",
+        "createdAt": "2024-03-02T16:43:17.702Z",
+        "updatedAt": "2024-03-02T19:34:54.720Z",
+        "__v": 0
+    },
+    {
+        "_id": "65e377120f7cd5923302b74d",
+        "firstName": "yassine",
+        "lastName": "ajr",
+        "imageUrl": "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png",
+        "email": "ajroudyassine7@gmail.com",
+        "phone": "55 332 620",
+        "ban": false,
+        "role": "user",
+        "createdAt": "2024-03-02T18:59:30.369Z",
+        "updatedAt": "2024-03-02T20:34:25.618Z",
+        "__v": 0
+    },
+    {
+        "_id": "65e38704732dd2b3100a9cc6",
+        "firstName": "yassine",
+        "lastName": "ajroud",
+        "imageUrl": "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png",
+        "email": "ajroudyassin@gmail.com",
+        "phone": "55 332 620",
+        "ban": false,
+        "role": "user",
+        "createdAt": "2024-03-02T20:07:32.520Z",
+        "updatedAt": "2024-03-02T20:07:32.520Z",
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+6- delete user
+method: DELETE 
+uri: http://192.168.1.20:8000/api/users/delete
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "id":"65e377120f7cd5923302b74d"
+    }
+response:{
+    "message": "User deleted successfully"
+    }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+7- ban user
+method: PUT 
+uri: http://192.168.1.20:8000/api/users/ban
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "id":"65e35725a3377aa6cafa3136",
+    "ban":false
+    }
+response:{
+    "message": "user banned "
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+8- forget password
+method: POST 
+uri: http://192.168.1.20:8000/api/forgetPassword
+body:{
+    "email":"ajroudyassine06@gmail.com"
+}
+response:{
+    "message": "send email  suuccessful "
+}
+
+//OTP sent in email 
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+9- verif OTP
+method: POST 
+uri: http://192.168.1.20:8000/api/VerifCode
+body:{
+    "email":"ajroudyassin@gmail.com",
+    "otp":2524
+}
+response:{
+    "message": "code suuccessful"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+10- reset password
+method: POST 
+uri: http://192.168.1.20:8000/api/Resetpassword
+body:{
+    "email":"ajroudyassin@gmail.com",
+    "password":"yassine"
+}
+response:{
+    "message": "password updated suuccessful"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+11- update password
+method: POST 
+uri: http://192.168.1.20:8000/api/updatepassword
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "id":"65e4925e174458a7822e0614",
+    "oldPassword":"yassine",
+    "newPassword":"yassine123"
+}
+response:{
+    "message": "password updated suuccessful"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+12- refreshtoken
+method: POST 
+uri: http://192.168.1.20:8000/api/refreshtoken
+body:{
+    "refreshtoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWFzc2luZSIsImlhdCI6MTcwOTU4NDc5NCwiZXhwIjoxNzA5NzU3NTk0fQ.gBYF5zl1FgGfG_AqGLx9YWyyMEPwpVq86zWzk2dw3Kk"
+}
+response:{
+    "message": "Token refreshed",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU",
+    "refreshtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWFzc2luZSIsImlhdCI6MTcwOTU4NDc5NCwiZXhwIjoxNzA5NzU3NTk0fQ.gBYF5zl1FgGfG_AqGLx9YWyyMEPwpVq86zWzk2dw3Kk"
+}

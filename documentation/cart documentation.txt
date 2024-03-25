@@ -1,0 +1,70 @@
+<----cart---->
+
+1- add new cart
+method: POST 
+uri: http://192.168.1.20:8000/api/cart/add
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyMjM2OCwiZXhwIjoxNzExMzIzMjY4fQ.ymK6LGRCBmB45eRah6R33QYwm7_OrGP4QdQFdTA252w"
+body: {
+    "userId":"65fdf2932cff2a8189cc7f57",
+    "sales":[]
+}
+response:{
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "sales": [],
+    "_id": "6600b52b4fa137a600285d98",
+    "createdAt": "2024-03-24T23:20:11.758Z",
+    "updatedAt": "2024-03-24T23:20:11.758Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get cart by userId
+method: GET 
+uri: http://192.168.1.20:8000/api/cart/get
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyMjM2OCwiZXhwIjoxNzExMzIzMjY4fQ.ymK6LGRCBmB45eRah6R33QYwm7_OrGP4QdQFdTA252w"
+body: {
+    "userId":"65fdf2932cff2a8189cc7f57"
+}
+response:{
+    "_id": "6600b52b4fa137a600285d98",
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "sales": [],
+    "createdAt": "2024-03-24T23:20:11.758Z",
+    "updatedAt": "2024-03-24T23:20:11.758Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- update cart 
+method: PUT 
+uri: http://192.168.1.20:8000/api/cart/update
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyMjM2OCwiZXhwIjoxNzExMzIzMjY4fQ.ymK6LGRCBmB45eRah6R33QYwm7_OrGP4QdQFdTA252w"
+body: {
+    "id":"6600b52b4fa137a600285d98",
+    "sales":["65fdf2932cff2a8189cc7f55"]
+}
+response:{
+    "_id": "6600b52b4fa137a600285d98",
+    "userId": "65fdf2932cff2a8189cc7f57",
+    "sales": [
+        "65fdf2932cff2a8189cc7f55"
+    ],
+    "createdAt": "2024-03-24T23:20:11.758Z",
+    "updatedAt": "2024-03-25T00:00:04.135Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- delete cart 
+method: DELETE 
+uri: http://192.168.1.20:8000/api/cart/delete
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqZWphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyMjM2OCwiZXhwIjoxNzExMzIzMjY4fQ.ymK6LGRCBmB45eRah6R33QYwm7_OrGP4QdQFdTA252w"
+body: {
+    "id":"6600b52b4fa137a600285d98"
+}
+response:{
+    "message": "cart deleted successfully"
+}

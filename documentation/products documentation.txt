@@ -1,0 +1,288 @@
+<----Products---->
+
+1- create new product
+method: POST 
+uri: http://192.168.1.20:8000/api/products
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "name":"product 1",
+    "reference":"12345678",
+    "description":"description",
+    "price":12.3,
+    "category":"salon",
+    "dimensions":{"height":10.2},
+    "subCategory":"tapis",
+    "image":"url",
+    "provider":"id",
+    "materials":"material"
+}
+response:{
+    "name": "product 1",
+    "reference": "12345678",
+    "description": "description",
+    "price": 12.3,
+    "category": "salon",
+    "dimensions": {
+        "height": 10.2
+    },
+    "subCategory": "tapis",
+    "image": "url",
+    "provider": "id",
+    "materials": "material",
+    "promotion": false,
+    "_id": "661da31b69ac0209af208c88",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get all product
+method: GET 
+uri: http://192.168.1.20:8000/api/products
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "dimensions": {
+            "height": 10.2
+        },
+        "_id": "661da31b69ac0209af208c88",
+        "name": "product 1",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "category": "salon",
+        "subCategory": "tapis",
+        "image": "url",
+        "provider": "id",
+        "materials": "material",
+        "promotion": false,
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get all product by id
+method: GET 
+uri: http://192.168.1.20:8000/api/products/661da31b69ac0209af208c88
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+    {
+        "dimensions": {
+            "height": 10.2
+        },
+        "_id": "661da31b69ac0209af208c88",
+        "name": "product 1",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "category": "salon",
+        "subCategory": "tapis",
+        "image": "url",
+        "provider": "id",
+        "materials": "material",
+        "promotion": false,
+        "__v": 0
+    }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- update product
+method: PUT 
+uri: http://192.168.1.20:8000/api/products/661da31b69ac0209af208c88
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "promotion":true
+}
+response:
+    {
+        "dimensions": {
+            "height": 10.2
+        },
+        "_id": "661da31b69ac0209af208c88",
+        "name": "product 1",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "category": "salon",
+        "subCategory": "tapis",
+        "image": "url",
+        "provider": "id",
+        "materials": "material",
+        "promotion": true,
+        "__v": 0
+    }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- delete product
+method: DELETE 
+uri: http://192.168.1.20:8000/api/products/661da31b69ac0209af208c88
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "message": "Product deleted successfully."
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+6- get product by category
+method: GET 
+uri: http://192.168.1.20:8000/api/products/category/salon
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:
+  [
+    {
+        "dimensions": {
+            "height": 10.2
+        },
+        "_id": "661da68f69ac0209af208c96",
+        "name": "product 3",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "category": "salon",
+        "subCategory": "tapis",
+        "image": "url",
+        "provider": "id",
+        "materials": "material",
+        "promotion": false,
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+7- get product by sub category
+method: GET 
+uri: http://192.168.1.20:8000/api/products/category/salon/subcategory/tapis
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:
+  [
+    {
+        "dimensions": {
+            "height": 10.2
+        },
+        "_id": "661da68f69ac0209af208c96",
+        "name": "product 3",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "category": "salon",
+        "subCategory": "tapis",
+        "image": "url",
+        "provider": "id",
+        "materials": "material",
+        "promotion": false,
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+8- upload image
+method: PUT 
+uri: http://192.168.1.20:8000/api/uploadprodcutsimage
+body:{
+    "id":"661da68a69ac0209af208c94",
+    "file": <select>
+}
+response:{
+    "message": "image added "
+}
+
+<----Products 3D---->
+
+1- create new product
+method: POST 
+uri: http://192.168.1.20:8000/api/3Dproducts
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "prodId":"661da68f69ac0209af208c96",
+    "image3D":"url",
+    "imageCouleurs":"couleur",
+    "quantity":3
+}
+response:{
+    "prodId": "661da68f69ac0209af208c96",
+    "image3D": "url",
+    "imageCouleurs": "couleur",
+    "quantity": 3,
+    "_id": "661dac2156bccdc1c619952a",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get 3d product
+method: POST 
+uri: http://192.168.1.20:8000/api/3Dproducts/661dac2156bccdc1c619952a
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:{
+    "_id": "661dac2156bccdc1c619952a",
+    "prodId": "661da68f69ac0209af208c96",
+    "image3D": "url",
+    "imageCouleurs": "couleur",
+    "quantity": 3,
+    "__v": 0
+}
+
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get all 3d products
+method: POST 
+http://192.168.1.20:8000/api/3Dproducts/all/661da68f69ac0209af208c96header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:[
+    {
+        "_id": "661dac1b56bccdc1c6199528",
+        "prodId": "661da68f69ac0209af208c96",
+        "image3D": "url",
+        "imageCouleurs": "couleur",
+        "quantity": 3,
+        "__v": 0
+    },
+    {
+        "_id": "661dac2156bccdc1c619952a",
+        "prodId": "661da68f69ac0209af208c96",
+        "image3D": "url",
+        "imageCouleurs": "couleur",
+        "quantity": 3,
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- upload color image
+method: PUT 
+uri: http://192.168.1.20:8000/api/uploadcolorimage
+body:{
+    "id":"661dac1b56bccdc1c6199528",
+    "file": <select>
+}
+response:{
+    "message": "image added "
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- upload glb file
+method: PUT 
+uri: http://192.168.1.20:8000/api/uploadcolorfile
+body:{
+    "id":"661dac1b56bccdc1c6199528",
+    "file": <select>
+}
+response:{
+    "message": "file added "
+}
+
+

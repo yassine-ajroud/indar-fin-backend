@@ -6,8 +6,6 @@ const nodemailer=require("nodemailer");
 const OTP = require('../models/OTP');
 
 
-
-
 const register =async (req,res)=> {
     var n = await User.countDocuments({email:req.body.email},{ limit: 1 });
     if(n==0){
@@ -29,7 +27,6 @@ const register =async (req,res)=> {
                 gender : req.body.gender,
                 birthDate : req.body.birthDate,
                 role: req.body.role || 'user'
-        
             })
             user.save().then(user => {
                 res.status(201).json ({
@@ -48,13 +45,10 @@ const register =async (req,res)=> {
             message : "user already exist"
         })
     }
-    
-  
 }
 
 const login = (req, res) => {
    var email = req.body.email;
-
     var password = req.body.password;
    
     User.findOne({email:email})
@@ -75,7 +69,6 @@ const login = (req, res) => {
                 if (result) {
                     let token = jwt.sign({ email: user.email }, 'secretValue', { expiresIn: '15m' });
                     let refreshtoken = jwt.sign({ name: user.firstName }, 'refreshtokensecret', { expiresIn: '7d' });
-
                     // Calculate the expiration date of the token
                     const expirationDate = new Date();
                     expirationDate.setMinutes(expirationDate.getMinutes() + 15); 

@@ -3,14 +3,18 @@
 1- register new user
 method: POST 
 uri: http://192.168.1.20:8000/api/register
-header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
-body: {
+body:{
     "firstName":"yassine",
     "lastName":"ajroud",
-    "email":"ajroudyassine06@gmail.com",
-    "phone":"55 332 620",
-    "password":"123456"
-     }
+    "email":"yassine@gmail.com",
+    "address":"M'saken-sousse",
+    "imageUrl":"",
+    "phone":"55332620",
+    "password":"12345678",
+    "OAuth":"G",
+    "gender":"male",
+    "birthDate":"30-12-2002"
+}
 response:{
     "message": "user Added Successfully",
     "uId": "65e35725a3377aa6cafa3136"
@@ -21,7 +25,6 @@ response:{
 2- login
 method: POST 
 uri: http://192.168.1.20:8000/api/login
-header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
 body: {
     "email":"ajroudyassine06@gmail.com",
     "password":"123456"

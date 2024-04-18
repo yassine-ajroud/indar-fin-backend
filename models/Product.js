@@ -5,12 +5,16 @@ const productSchema = new mongoose.Schema({
   reference: {type: String,required: true},
   description: { type: String, required: true },
   price: { type: Number, required: true },
-  category: { type: String, required: true },
+  category:{ 
+    id :{ type: String, required: true  },
+    title : { type: String, required: true  }},
   dimensions: { 
     height :{ type: Number },
     width : { type: Number },
     thickness: { type: Number }},
-  subCategory: { type: String, required: true },
+  subCategory: { 
+    id :{ type: String, required: true  },
+    title : { type: String, required: true  }},
   image: { type: String , required: true},
   provider: { 
     id :{ type: String, required: true  },

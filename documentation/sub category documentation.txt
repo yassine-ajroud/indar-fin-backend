@@ -1,0 +1,87 @@
+<----SubCategory---->
+
+1- create new subcategory
+method: POST 
+uri: http://192.168.1.20:8000/api/subcategory/add
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "title":"Tapis"
+    }
+
+response:{
+    "title": "Tapis",
+    "_id": "66214de6ab2394a4f14071ef",
+    "createdAt": "2024-04-18T16:44:22.724Z",
+    "updatedAt": "2024-04-18T16:44:22.724Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get all subcategries
+method: GET 
+uri: http://192.168.1.20:8000/api/subcategory
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "_id": "662151e1e2a3a8ce4585403d",
+        "title": "Tapis",
+        "createdAt": "2024-04-18T17:01:21.732Z",
+        "updatedAt": "2024-04-18T17:01:21.732Z",
+        "__v": 0
+    },
+    {
+        "_id": "662151eae2a3a8ce4585403f",
+        "title": "Table",
+        "createdAt": "2024-04-18T17:01:30.406Z",
+        "updatedAt": "2024-04-18T17:01:30.406Z",
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get subcategory by id
+method: GET 
+uri: http://192.168.1.20:8000/api/subcategory/66214de6ab2394a4f14071ef
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+ {
+    "_id": "66214de6ab2394a4f14071ef",
+    "title": "Table",
+    "createdAt": "2024-04-18T16:44:22.724Z",
+    "updatedAt": "2024-04-18T16:44:22.724Z",
+    "__v": 0
+}
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- update category
+method: PUT 
+uri: http://192.168.1.20:8000/api/subcategory/66214de6ab2394a4f14071ef
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "title":"Tapis"
+}
+response:
+{
+    "_id": "66214de6ab2394a4f14071ef",
+    "title": "Tapis",
+    "createdAt": "2024-04-18T16:44:22.724Z",
+    "updatedAt": "2024-04-18T16:55:23.678Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- delete subcategory
+method: DELETE 
+uri: http://192.168.1.20:8000/api/subcategory/66214de6ab2394a4f14071ef
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "message": "subcategory deleted successfully."
+}
+

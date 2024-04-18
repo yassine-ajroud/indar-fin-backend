@@ -9,6 +9,8 @@ const cartRoute = require("./routes/cart");
 const listRoute = require("./routes/WishList")
 const prodRoute = require('./routes/Product');
 const RatingRoutes = require ('./routes/Rating')
+const CategoryRoutes = require ('./routes/Category')
+const SubCategoryRoutes = require ('./routes/SubCategory')
 
 // const ReviewRoute = require ('./routes/Review')
 // const PromotionRoutes = require('./routes/Promotion');
@@ -51,10 +53,12 @@ app.listen(PORT, ()=>{
 })
 
 app.use('/api', AuthRoute)
-app.use("/api", cartRoute);
-app.use("/api", listRoute);
+app.use('/api', cartRoute);
+app.use('/api', listRoute);
 app.use('/api', prodRoute);
 app.use('/api', RatingRoutes);
+app.use('/api', CategoryRoutes);
+app.use('/api', SubCategoryRoutes);
 
 // app.use('/api', ReviewRoute)
 // app.use('/api', PromotionRoutes);

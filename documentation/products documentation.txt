@@ -9,31 +9,40 @@ body:{
     "reference":"12345678",
     "description":"description",
     "price":12.3,
-    "category":"salon",
+    "category":{"id":"provider id","title":"Salon"},
     "dimensions":{"height":10.2},
-    "subCategory":"tapis",
+    "subCategory":{"id":"provider id","title":"Tapis"},
     "image":"url",
-    "provider":{"id":"provider id","name":"provider name"}
+    "provider":{"id":"provider id","name":"provider name"},
     "materials":"material"
-
 }
+
 response:{
     "name": "product 1",
     "reference": "12345678",
     "description": "description",
     "price": 12.3,
-    "category": "salon",
+    "category": {
+        "id": "provider id",
+        "title": "Salon"
+    },
     "dimensions": {
         "height": 10.2
     },
-    "subCategory": "tapis",
+    "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+    },
     "image": "url",
-    "provider":{"id":"provider id","name":"provider name"},
+    "provider": {
+        "id": "provider id",
+        "name": "provider name"
+    },
     "materials": "material",
     "promotion": false,
     "sales": 0,
     "rate": 0,
-    "_id": "661da31b69ac0209af208c88",
+    "_id": "66212e4491b564e10f6a4d92",
     "__v": 0
 }
 
@@ -45,54 +54,72 @@ uri: http://192.168.1.20:8000/api/products
 header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
 body: null
 response:[
-    {
-        "dimensions": {
-            "height": 10.2
-        },
-        "_id": "661da31b69ac0209af208c88",
-        "name": "product 1",
-        "reference": "12345678",
-        "description": "description",
-        "price": 12.3,
-        "category": "salon",
-        "subCategory": "tapis",
-        "image": "url",
-        "provider":{"id":"provider id","name":"provider name"},
-        "materials": "material",
-        "promotion": false,
-        "sales": 0,
-        "rate": 0,
-        "__v": 0
-    }
+   {
+    "name": "product 1",
+    "reference": "12345678",
+    "description": "description",
+    "price": 12.3,
+    "category": {
+        "id": "provider id",
+        "title": "Salon"
+    },
+    "dimensions": {
+        "height": 10.2
+    },
+    "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+    },
+    "image": "url",
+    "provider": {
+        "id": "provider id",
+        "name": "provider name"
+    },
+    "materials": "material",
+    "promotion": false,
+    "sales": 0,
+    "rate": 0,
+    "_id": "66212e4491b564e10f6a4d92",
+    "__v": 0
+}
 ]
 
 <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 
 3- get all product by id
 method: GET 
-uri: http://192.168.1.20:8000/api/products/661da31b69ac0209af208c88
+uri: http://192.168.1.20:8000/api/products/66212e4491b564e10f6a4d92
 header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
 body: null
 response:
-    {
-        "dimensions": {
-            "height": 10.2
-        },
-        "_id": "661da31b69ac0209af208c88",
-        "name": "product 1",
-        "reference": "12345678",
-        "description": "description",
-        "price": 12.3,
-        "category": "salon",
-        "subCategory": "tapis",
-        "image": "url",
-        "provider":{"id":"provider id","name":"provider name"},
-        "materials": "material",
-        "promotion": false,
-        "sales": 0,
-        "rate": 0,
-        "__v": 0
-    }
+   {
+    "name": "product 1",
+    "reference": "12345678",
+    "description": "description",
+    "price": 12.3,
+    "category": {
+        "id": "provider id",
+        "title": "Salon"
+    },
+    "dimensions": {
+        "height": 10.2
+    },
+    "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+    },
+    "image": "url",
+    "provider": {
+        "id": "provider id",
+        "name": "provider name"
+    },
+    "materials": "material",
+    "promotion": false,
+    "sales": 0,
+    "rate": 0,
+    "_id": "66212e4491b564e10f6a4d92",
+    "__v": 0
+}
 
 <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 
@@ -113,8 +140,14 @@ response:
         "reference": "12345678",
         "description": "description",
         "price": 12.3,
-        "category": "salon",
-        "subCategory": "tapis",
+        "category": {
+        "id": "provider id",
+        "title": "Salon"
+        },
+        "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+        },
         "image": "url",
         "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
@@ -154,8 +187,14 @@ response:
         "reference": "12345678",
         "description": "description",
         "price": 12.3,
-        "category": "salon",
-        "subCategory": "tapis",
+        "category": {
+        "id": "provider id",
+        "title": "Salon"
+        },
+        "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+        },
         "image": "url",
         "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
@@ -184,8 +223,14 @@ response:
         "reference": "12345678",
         "description": "description",
         "price": 12.3,
-        "category": "salon",
-        "subCategory": "tapis",
+        "category": {
+        "id": "provider id",
+        "title": "Salon"
+        },
+        "subCategory": {
+        "id": "provider id",
+        "title": "Tapis"
+        },
         "image": "url",
         "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",

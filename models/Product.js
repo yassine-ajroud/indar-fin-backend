@@ -12,10 +12,14 @@ const productSchema = new mongoose.Schema({
     thickness: { type: Number }},
   subCategory: { type: String, required: true },
   image: { type: String , required: true},
-  provider: { type: String , required: true}, 
+  provider: { 
+    id :{ type: String, required: true  },
+    name : { type: String, required: true  }},
   materials:{type:String, required: true},
   promotion:{ type: Boolean,
-    default: false}
+    default: false},
+sales:{ type: Number , default:0},
+rate: { type: Number , default:0}
 });
 
 module.exports = mongoose.model('Product', productSchema);

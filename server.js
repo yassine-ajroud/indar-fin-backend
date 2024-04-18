@@ -8,12 +8,12 @@ const AuthRoute = require ('./routes/Auth')
 const cartRoute = require("./routes/cart");
 const listRoute = require("./routes/WishList")
 const prodRoute = require('./routes/Product');
+const RatingRoutes = require ('./routes/Rating')
 
 // const ReviewRoute = require ('./routes/Review')
 // const PromotionRoutes = require('./routes/Promotion');
 // const SalesRoutes = require('./routes/Sales');
 // const FournisseurRoutes = require('./routes/FournisseurRoutes');
-// const RatingRoutes = require ('./routes/RatingRoutes')
 // const RecRoutes = require ('./routes/ReclamationRoutes')
 
 
@@ -54,11 +54,11 @@ app.use('/api', AuthRoute)
 app.use("/api", cartRoute);
 app.use("/api", listRoute);
 app.use('/api', prodRoute);
+app.use('/api', RatingRoutes);
 
 // app.use('/api', ReviewRoute)
 // app.use('/api', PromotionRoutes);
 // app.use('/api', SalesRoutes);
 // app.use('/api', FournisseurRoutes);
 
-// app.use('/api', RatingRoutes);
 // app.use('/api', RecRoutes);

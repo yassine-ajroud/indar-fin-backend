@@ -13,8 +13,9 @@ body:{
     "dimensions":{"height":10.2},
     "subCategory":"tapis",
     "image":"url",
-    "provider":"id",
+    "provider":{"id":"provider id","name":"provider name"}
     "materials":"material"
+
 }
 response:{
     "name": "product 1",
@@ -27,9 +28,11 @@ response:{
     },
     "subCategory": "tapis",
     "image": "url",
-    "provider": "id",
+    "provider":{"id":"provider id","name":"provider name"},
     "materials": "material",
     "promotion": false,
+    "sales": 0,
+    "rate": 0,
     "_id": "661da31b69ac0209af208c88",
     "__v": 0
 }
@@ -54,9 +57,11 @@ response:[
         "category": "salon",
         "subCategory": "tapis",
         "image": "url",
-        "provider": "id",
+        "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
         "promotion": false,
+        "sales": 0,
+        "rate": 0,
         "__v": 0
     }
 ]
@@ -81,9 +86,11 @@ response:
         "category": "salon",
         "subCategory": "tapis",
         "image": "url",
-        "provider": "id",
+        "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
         "promotion": false,
+        "sales": 0,
+        "rate": 0,
         "__v": 0
     }
 
@@ -109,9 +116,11 @@ response:
         "category": "salon",
         "subCategory": "tapis",
         "image": "url",
-        "provider": "id",
+        "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
         "promotion": true,
+        "sales": 0,
+        "rate": 0,
         "__v": 0
     }
 
@@ -148,9 +157,11 @@ response:
         "category": "salon",
         "subCategory": "tapis",
         "image": "url",
-        "provider": "id",
+        "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
         "promotion": false,
+        "sales": 0,
+        "rate": 0,
         "__v": 0
     }
 ]
@@ -176,9 +187,11 @@ response:
         "category": "salon",
         "subCategory": "tapis",
         "image": "url",
-        "provider": "id",
+        "provider":{"id":"provider id","name":"provider name"},
         "materials": "material",
         "promotion": false,
+        "sales": 0,
+        "rate": 0,
         "__v": 0
     }
 ]

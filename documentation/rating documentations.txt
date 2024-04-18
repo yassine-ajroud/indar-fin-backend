@@ -1,0 +1,113 @@
+<----Products---->
+
+1- create new rate
+method: POST 
+uri: http://192.168.1.20:8000/api/ratings
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "user":"65fdf2932cff2a8189cc7f57",
+    "product":"661da68a69ac0209af208c94",
+    "rating":2
+     }
+response:{
+    "message": "Avis simple créé avec succès",
+    "review": {
+        "user": "65fdf2932cff2a8189cc7f57",
+        "product": "661da68a69ac0209af208c94",
+        "rating": 2,
+        "_id": "66203b7f266ad195df8a2d26",
+        "createdAt": "2024-04-17T21:13:35.251Z",
+        "updatedAt": "2024-04-17T21:13:35.251Z",
+        "__v": 0
+    }
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get all product ratings
+method: GET 
+uri: http://192.168.1.20:8000/api/products/661da68a69ac0209af208c94/ratings
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:[
+    {
+        "_id": "66203bc1266ad195df8a2d28",
+        "user": "65ff599b5bc7e54b85905595",
+        "product": "661da68a69ac0209af208c94",
+        "rating": 4,
+        "createdAt": "2024-04-17T21:14:41.543Z",
+        "updatedAt": "2024-04-17T21:14:41.543Z",
+        "__v": 0
+    },
+    {
+        "_id": "66203ff646f8658fbed8d984",
+        "user": "65ff599b5bc7e54b85905595",
+        "product": "661da68a69ac0209af208c94",
+        "rating": 2,
+        "createdAt": "2024-04-17T21:32:38.545Z",
+        "updatedAt": "2024-04-17T21:32:38.545Z",
+        "__v": 0
+    },
+    {
+        "_id": "6620400646f8658fbed8d989",
+        "user": "65ff599b5bc7e54b85905595",
+        "product": "661da68a69ac0209af208c94",
+        "rating": 2,
+        "createdAt": "2024-04-17T21:32:54.342Z",
+        "updatedAt": "2024-04-17T21:32:54.342Z",
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get single rate
+method: GET 
+uri: http://192.168.1.20:8000/api/ratings/6620400646f8658fbed8d989
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:null
+response:{
+    "_id": "6620400646f8658fbed8d989",
+    "user": "65ff599b5bc7e54b85905595",
+    "product": "661da68a69ac0209af208c94",
+    "rating": 2,
+    "createdAt": "2024-04-17T21:32:54.342Z",
+    "updatedAt": "2024-04-17T21:32:54.342Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- rating updtate
+method: PUT 
+uri: http://192.168.1.20:8000/api/ratings/6620400646f8658fbed8d989
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "rating":4
+     }
+response:{
+    "_id": "6620400646f8658fbed8d989",
+    "user": "65ff599b5bc7e54b85905595",
+    "product": "661da68a69ac0209af208c94",
+    "rating": 4,
+    "createdAt": "2024-04-17T21:32:54.342Z",
+    "updatedAt": "2024-04-17T21:44:19.731Z",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- delete rating
+method: DELETE 
+uri: http://192.168.1.20:8000/api/ratings/6620400646f8658fbed8d989
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:
+response:{
+    "_id": "6620400646f8658fbed8d989",
+    "user": "65ff599b5bc7e54b85905595",
+    "product": "661da68a69ac0209af208c94",
+    "rating": 4,
+    "createdAt": "2024-04-17T21:32:54.342Z",
+    "updatedAt": "2024-04-17T21:44:19.731Z",
+    "__v": 0
+}

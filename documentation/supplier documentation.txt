@@ -1,0 +1,104 @@
+<----Supplier---->
+
+1- create new supplier
+method: POST 
+uri: http://192.168.1.20:8000/api/supplier
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "name":"yassine ajroud",
+    "phone":"12345678",
+    "address":"msaken sousse",
+    "marque":"My marque"
+     }
+
+response:{
+    "name": "yassine ajroud",
+    "address": "msaken sousse",
+    "phone": "12345678",
+    "marque": "My marque",
+    "image": null,
+    "webSite": null,
+    "_id": "6622966826d9db7804b126a3",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get all suppliers
+method: GET 
+uri: http://192.168.1.20:8000/api/supplier
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "image": null,
+        "webSite": null,
+        "_id": "6622963812cb11d9f8041717",
+        "name": "yassine ajroud",
+        "address": "msaken sousse",
+        "phone": "12345678",
+        "marque": "My marque",
+        "__v": 0
+    },
+    {
+        "_id": "6622966826d9db7804b126a3",
+        "name": "yassine ajroud",
+        "address": "msaken sousse",
+        "phone": "12345678",
+        "marque": "My marque",
+        "image": null,
+        "webSite": null,
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get supplier by id
+method: GET 
+uri: http://192.168.1.20:8000/api/supplier/6622963812cb11d9f8041717
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "image": null,
+    "webSite": null,
+    "_id": "6622963812cb11d9f8041717",
+    "name": "yassine ajroud",
+    "address": "msaken sousse",
+    "phone": "12345678",
+    "marque": "My marque",
+    "__v": 0
+}
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- update supplier
+method: PUT 
+uri: http://192.168.1.20:8000/api/category/66214de6ab2394a4f14071ef
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "image":"marque image"
+}
+response:
+{
+    "webSite": null,
+    "_id": "6622963812cb11d9f8041717",
+    "name": "yassine ajroud",
+    "address": "msaken sousse",
+    "phone": "12345678",
+    "marque": "My marque",
+    "__v": 0,
+    "image": "marque image"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- delete supplier
+method: DELETE 
+uri: http://192.168.1.20:8000/api/supplier/6622966826d9db7804b126a3
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "message": "supplier deleted successfully."
+}

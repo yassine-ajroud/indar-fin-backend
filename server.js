@@ -11,10 +11,10 @@ const prodRoute = require('./routes/Product');
 const RatingRoutes = require ('./routes/Rating')
 const CategoryRoutes = require ('./routes/Category')
 const SubCategoryRoutes = require ('./routes/SubCategory')
-const FournisseurRoutes = require('./routes/SupplierRoutes');
+const SupplierRoutes = require('./routes/SupplierRoutes');
+const PromotionRoutes = require('./routes/Promotion');
 
 // const ReviewRoute = require ('./routes/Review')
-// const PromotionRoutes = require('./routes/Promotion');
 // const SalesRoutes = require('./routes/Sales');
 // const RecRoutes = require ('./routes/ReclamationRoutes')
 
@@ -28,6 +28,8 @@ app.use("/uploads/product_images",express.static('/uploads/product_images'));
 app.use("/uploads/color_images",express.static('/uploads/color_images'));
 app.use("/uploads/color_images",express.static('/uploads/color_files'));
 app.use("/uploads/suppliers",express.static('/uploads/suppliers'));
+app.use("/uploads/category_image",express.static('/uploads/category_image'));
+app.use("/uploads/subcategory_image",express.static('/uploads/subcategory_image'));
 
 
 
@@ -61,10 +63,10 @@ app.use('/api', prodRoute);
 app.use('/api', RatingRoutes);
 app.use('/api', CategoryRoutes);
 app.use('/api', SubCategoryRoutes);
-app.use('/api', FournisseurRoutes);
+app.use('/api', SupplierRoutes);
+app.use('/api', PromotionRoutes);
 
 // app.use('/api', ReviewRoute)
-// app.use('/api', PromotionRoutes);
 // app.use('/api', SalesRoutes);
 
 // app.use('/api', RecRoutes);

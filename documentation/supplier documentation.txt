@@ -102,3 +102,16 @@ response:
 {
     "message": "supplier deleted successfully."
 }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+6- upload supplier image
+method: PUT 
+uri: http://192.168.1.20:8000/api/updatesupplierimage
+body:{
+    "id":"661da68a69ac0209af208c94",
+    "file": <select>
+}
+response:{
+    "message": "image added "
+}

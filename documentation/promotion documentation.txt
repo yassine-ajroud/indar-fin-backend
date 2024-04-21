@@ -1,0 +1,119 @@
+<----Proomotion---->
+
+1- create new promotion
+method: POST 
+uri: http://192.168.1.20:8000/api/promotions
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body:{
+    "product":"66204cdd109be373ab90dc34",
+    "discountPercentage":20,
+    "newPrice":50,
+    "startDate":"2-2-2024",   
+    "endDate":"2-2-2024",
+    "image":"image"
+}
+
+response:{
+    "product": "66204cdd109be373ab90dc34",
+    "discountPercentage": 20,
+    "newPrice": 50,
+    "startDate": "2-2-2024",
+    "endDate": "2-2-2024",
+    "image": "image",
+    "_id": "66253d2edc9e8bdcc56689d7",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get all promotions
+method: GET 
+uri: http://192.168.1.20:8000/api/promotions
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "_id": "66253d2edc9e8bdcc56689d7",
+        "product": "66204cdd109be373ab90dc34",
+        "discountPercentage": 20,
+        "newPrice": 50,
+        "startDate": "2-2-2024",
+        "endDate": "2-2-2024",
+        "image": "image",
+        "__v": 0
+    },
+    {
+        "_id": "66253d61dc9e8bdcc56689da",
+        "product": "66212e4491b564e10f6a4d92",
+        "discountPercentage": 20,
+        "newPrice": 50,
+        "startDate": "2-2-2024",
+        "endDate": "2-2-2024",
+        "image": "image",
+        "__v": 0
+    }
+]
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+3- get promotion by id
+method: GET 
+uri: http://192.168.1.20:8000/api/promotions/66253d2edc9e8bdcc56689d7
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "_id": "66253d2edc9e8bdcc56689d7",
+    "product": "66204cdd109be373ab90dc34",
+    "discountPercentage": 20,
+    "newPrice": 50,
+    "startDate": "2-2-2024",
+    "endDate": "2-2-2024",
+    "image": "image",
+    "__v": 0
+}
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+4- update promotion
+method: PUT 
+uri: http://192.168.1.20:8000/api/promotions/66253d2edc9e8bdcc56689d7
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: {
+    "newPrice":60
+}
+response:
+{
+    "_id": "66253d2edc9e8bdcc56689d7",
+    "product": "66204cdd109be373ab90dc34",
+    "discountPercentage": 20,
+    "newPrice": 60,
+    "startDate": "2-2-2024",
+    "endDate": "2-2-2024",
+    "image": "image",
+    "__v": 0
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+5- delete promotion
+method: DELETE 
+uri: http://192.168.1.20:8000/api/promotions/66253d2edc9e8bdcc56689d7
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:
+{
+    "message": "Promotion deleted"
+}
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+6- upload promotion image
+method: PUT 
+uri: http://192.168.1.20:8000/api/updatepromotionimage
+body:{
+    "id":"661da68a69ac0209af208c94",
+    "file": <select>
+}
+response:{
+    "message": "image added "
+}

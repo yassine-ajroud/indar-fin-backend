@@ -87,9 +87,9 @@ response:
 
 <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 
-8- update supplier image
+6- update category image
 method: PUT 
-uri: http://192.168.1.20:8000/api/updatesupplierImage
+uri: http://192.168.1.20:8000/api/updatecategoryimage
 body:{
     "id":"661da68a69ac0209af208c94",
     "file": <select>

@@ -85,3 +85,15 @@ response:
     "message": "subcategory deleted successfully."
 }
 
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+6- update subcategory image
+method: PUT 
+uri: http://192.168.1.20:8000/api/updatesubcategoryimage
+body:{
+    "id":"661da68a69ac0209af208c94",
+    "file": <select>
+}
+response:{
+    "message": "image updated "
+}

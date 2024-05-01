@@ -23,7 +23,9 @@ const productSchema = new mongoose.Schema({
   promotion:{ type: Boolean,
     default: false},
 sales:{ type: Number , default:0},
-rate: { type: Number , default:0}
-});
+rate: { type: Number , default:0},
+},
+{ timestamps: true }
+);
 
 module.exports = mongoose.model('Product', productSchema);

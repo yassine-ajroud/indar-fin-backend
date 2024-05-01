@@ -11,6 +11,7 @@ const  authenticate = require('../middleware/authenticate')
 
 router.post('/products' ,authenticate,productController.createProduct);
 router.get('/products', authenticate,productController.getAllProducts);
+router.get('/products/sorted', authenticate,productController.getSortedProducts);
 router.get('/products/:id', authenticate,productController.getProductById);
 router.put('/products/:id', authenticate,productController.updateProduct);
 router.delete('/products/:id', authenticate,productController.deleteProduct);

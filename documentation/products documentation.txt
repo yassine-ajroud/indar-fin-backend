@@ -86,7 +86,7 @@ response:[
 
 <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
 
-3- get all product by id
+3- get product by id
 method: GET 
 uri: http://192.168.1.20:8000/api/products/66212e4491b564e10f6a4d92
 header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
@@ -253,6 +253,156 @@ body:{
 response:{
     "message": "image added "
 }
+
+<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>
+
+2- get sorted products
+method: GET 
+uri: http://192.168.1.20:8000/api/products/sorted
+header: bearer token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDk1ODYyNzgsImV4cCI6MTcwOTU4NjM5OH0.XWUaDdUV4aN1uCzWvUwgXjFyHxsxsPAUMTAVT3iGwIU"
+body: null
+response:[
+    {
+        "category": {
+            "id": "provider id",
+            "title": "Salon"
+        },
+        "dimensions": {
+            "height": 10.2
+        },
+        "subCategory": {
+            "id": "provider id",
+            "title": "Tapis"
+        },
+        "provider": {
+            "id": "provider id",
+            "name": "provider name"
+        },
+        "_id": "6628d40b1d2ad50636c2d539",
+        "name": "product 5",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "image": "url",
+        "materials": "material",
+        "promotion": false,
+        "sales": 5,
+        "rate": 0,
+        "__v": 0
+    },
+    {
+        "category": {
+            "id": "provider id",
+            "title": "Salon"
+        },
+        "dimensions": {
+            "height": 10.2
+        },
+        "subCategory": {
+            "id": "provider id",
+            "title": "Tapis"
+        },
+        "provider": {
+            "id": "provider id",
+            "name": "provider name"
+        },
+        "_id": "6628d3f41d2ad50636c2d535",
+        "name": "product 3",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "image": "url",
+        "materials": "material",
+        "promotion": false,
+        "sales": 2,
+        "rate": 0,
+        "__v": 0
+    },
+    {
+        "category": {
+            "id": "provider id",
+            "title": "Salon"
+        },
+        "dimensions": {
+            "height": 10.2
+        },
+        "subCategory": {
+            "id": "provider id",
+            "title": "Tapis"
+        },
+        "provider": {
+            "id": "provider id",
+            "name": "provider name"
+        },
+        "_id": "6628d4071d2ad50636c2d537",
+        "name": "product 4",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "image": "url",
+        "materials": "material",
+        "promotion": false,
+        "sales": 1,
+        "rate": 0,
+        "__v": 0
+    },
+    {
+        "category": {
+            "id": "provider id",
+            "title": "Salon"
+        },
+        "dimensions": {
+            "height": 10.2
+        },
+        "subCategory": {
+            "id": "provider id",
+            "title": "Tapis"
+        },
+        "provider": {
+            "id": "provider id",
+            "name": "provider name"
+        },
+        "_id": "66212e4491b564e10f6a4d92",
+        "name": "product 1",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "image": "url",
+        "materials": "material",
+        "promotion": true,
+        "sales": 0,
+        "rate": 0,
+        "__v": 0
+    },
+    {
+        "category": {
+            "id": "provider id",
+            "title": "Salon"
+        },
+        "dimensions": {
+            "height": 10.2
+        },
+        "subCategory": {
+            "id": "provider id",
+            "title": "Tapis"
+        },
+        "provider": {
+            "id": "provider id",
+            "name": "provider name"
+        },
+        "_id": "6628d3ee1d2ad50636c2d533",
+        "name": "product 2",
+        "reference": "12345678",
+        "description": "description",
+        "price": 12.3,
+        "image": "url",
+        "materials": "material",
+        "promotion": false,
+        "sales": 0,
+        "rate": 0,
+        "__v": 0
+    }
+]
 
 <----Products 3D---->
 

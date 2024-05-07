@@ -80,7 +80,7 @@ exports.deleteProduct = async (req, res) => {
 exports.getProductsByCategory = async (req, res) => {
   try {
     const { category } = req.params;
-    const products = await Product.find({ "category.title":category});
+    const products = await Product.find({ "category":category});
     
     res.status(200).json(products);
   } catch (error) {

@@ -7,6 +7,7 @@ const supplierSchema = new mongoose.Schema({
   marque :{type:String ,required : true},
   image: {type:String,default:null},
   webSite: { type: String,default:null},
+  userId: {type:String,default:null},
 
 
 });

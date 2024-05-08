@@ -22,22 +22,22 @@ const PromotionRoutes = require('./routes/Promotion');
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-
-app.use("/uploads/images",express.static('uploads/images'));
-app.use("/uploads/product_images",express.static('/uploads/product_images'));
-app.use("/uploads/color_images",express.static('/uploads/color_images'));
-app.use("/uploads/color_images",express.static('/uploads/color_files'));
-app.use("/uploads/suppliers",express.static('/uploads/suppliers'));
-app.use("/uploads/category_image",express.static('/uploads/category_image'));
-app.use("/uploads/subcategory_image",express.static('/uploads/subcategory_image'));
-
-
-
-
-// cors for angular integration
-// cors for angular integration
 const cors = require('cors')
-app.use(cors({origin: 'http://localhost:4200'}))
+app.use(cors({origin: '*'}))
+app.use("/uploads/images",express.static('uploads/images'));
+app.use("/uploads/product_images",express.static('uploads/product_images'));
+app.use("/uploads/color_images",express.static('uploads/color_images'));
+app.use("/uploads/color_files", express.static('uploads/color_files'));
+app.use("/uploads/suppliers",express.static('uploads/suppliers'));
+app.use("/uploads/category_image",express.static('uploads/category_image'));
+app.use("/uploads/subcategory_image",express.static('uploads/subcategory_image'));
+
+
+
+
+// cors for angular integration
+// cors for angular integration
+
 //::::::::::
 mongoose
   .connect("mongodb://127.0.0.1:27017/V-Commerce", {

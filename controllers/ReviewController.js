@@ -31,11 +31,28 @@ exports.createSimpleReview = async (req, res) => {
 
 exports.getAllSimpleReviews = async (req, res) => {
 try{
-  
-  const { productId } = req.params;
+  const  {productId}  = req.params;
     const simpleReviews = await SimpleReview.find({ product: productId });
     arr = Array.from(simpleReviews)
-    res.status(200).json(simpleReviews,);
+     oneStar=0;twoStars=0;threeStars=0;fourStars=0;fiveStars=0;sum=0;
+    arr.forEach(element=>{
+      sum+=element.rating;
+      if(element.rating==1){
+        oneStar++
+      }else if(element.rating==2){
+        twoStars++
+      }else if(element.rating==3){
+        threeStars++
+      }else if(element.rating==4){
+        fourStars++
+      }else if(element.rating==5){
+        fiveStars++
+      }
+    })
+   const prod =await Product.findById(productId);
+   avg = prod.rate
+  
+    res.status(200).json({oneStar:oneStar,twoStars:twoStars,threeStars:threeStars,fourStars:fourStars,fiveStars:fiveStars,simpleReviews,number:arr.length,avg:avg});
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la récupération des avis simples', error: error.message });
   }

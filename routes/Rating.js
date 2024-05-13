@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const  authenticate = require('../middleware/authenticate')
-const simpleReviewController = require('../controllers/ReviewController');
+const simpleReviewController = require('../controllers/RatingController');
 
 router.post('/ratings',authenticate, simpleReviewController.createSimpleReview);
 router.get('/products/:productId/ratings',authenticate, simpleReviewController.getAllSimpleReviews);

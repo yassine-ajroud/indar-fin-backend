@@ -12,7 +12,7 @@ router.post('/forgetPassword', AuthController.forgetPassword)
 router.post('/VerifCode', AuthController.VerifCode)
 router.post('/Resetpassword', AuthController.Resetpassword)
 router.post('/updatepassword',authenticate, AuthController.updatepassword)
-router.get('/users/byId',authenticate, AuthController.profilgetById)
+router.get('/users/byId', AuthController.profilgetById)
 router.put('/UpdateProfil',authenticate, AuthController.UpdateProfil)
 router.post('/refreshtoken', AuthController.refreshtoken)
 router.put('/users/ban',authenticate, AuthController.banUser);

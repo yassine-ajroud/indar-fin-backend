@@ -40,9 +40,9 @@ exports.getAllComments = async (req, res) => {    const { productId } = req.para
   // update
   exports.updateComment = async (req, res) => {
     const { reviewId } = req.params;
-    const { comment } = req.body;
+    const { comment,image } = req.body;
   
-    Review.findByIdAndUpdate(reviewId, {comment }, { new: true })
+    Review.findByIdAndUpdate(reviewId, {comment,image }, { new: true })
       .exec()
       .then((updatedReview) => {
         res.json({ message: 'Rating added', review: updatedReview });

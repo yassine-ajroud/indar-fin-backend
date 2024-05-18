@@ -15,7 +15,7 @@ const SupplierRoutes = require('./routes/SupplierRoutes');
 const PromotionRoutes = require('./routes/Promotion');
 const ReviewRoute = require ('./routes/Review')
 
- // const SalesRoutes = require('./routes/Sales');
+ const SalesRoutes = require('./routes/Sales');
 // const RecRoutes = require ('./routes/ReclamationRoutes')
 
 
@@ -67,8 +67,6 @@ app.use('/api', SubCategoryRoutes);
 app.use('/api', SupplierRoutes);
 app.use('/api', PromotionRoutes);
 app.use('/api', ReviewRoute)
-
-
- // app.use('/api', SalesRoutes);
+app.use('/api', SalesRoutes);
 
 // app.use('/api', RecRoutes);

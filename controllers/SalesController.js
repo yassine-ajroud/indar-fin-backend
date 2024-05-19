@@ -3,13 +3,14 @@ const Product = require('../models/Product');
 
 exports.recordSale = async (req, res) => {
    try {
-    const { productId, fournisseurId, UserId, quantity ,price} = req.body;
+    const { productId, fournisseurId, UserId, quantity ,price,modelId} = req.body;
 
     const sale = new Sale({
       productId,
       fournisseurId,
       UserId,
       quantity,
+      modelId,
       price
     });
     sale.status=

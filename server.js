@@ -16,7 +16,7 @@ const PromotionRoutes = require('./routes/Promotion');
 const ReviewRoute = require ('./routes/Review')
 
  const SalesRoutes = require('./routes/Sales');
-// const RecRoutes = require ('./routes/ReclamationRoutes')
+ const RecRoutes = require ('./routes/ReclamationRoutes')
 
 
 app.use(morgan('dev'))
@@ -69,4 +69,4 @@ app.use('/api', PromotionRoutes);
 app.use('/api', ReviewRoute)
 app.use('/api', SalesRoutes);
 
-// app.use('/api', RecRoutes);
+ app.use('/api', RecRoutes);

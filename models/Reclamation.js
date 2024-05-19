@@ -6,14 +6,21 @@ const reclamationSchema = new Schema({
     type: String,
     required: true,
   },
+  address: {
+    type: String,
+    required: true,
+  },
   sales:[ {
     type:String,
     required: true,
   }],
-  status: {
-    type: String,
-    enum: ['Pending', 'Resolved', 'Closed'],
-    default: 'Pending',
+  completed: {
+    type: Boolean,
+    default: false,
+  },
+  verified: {
+    type: Boolean,
+    default: false,
   },
   reference:{type:String,required:true},
   price:{

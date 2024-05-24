@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Supplier = require('../models/supplier')
+require('dotenv').config()
 
 const supplierController = require('../controllers/SupplierController');
 
@@ -34,7 +35,7 @@ router.put('/updatesupplierimage',upload.any('image'),async (req, res) => {
 
          await Supplier.findByIdAndUpdate(
             id, { 
-              image: 'http://192.168.1.20:8000/uploads/suppliers/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/suppliers/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

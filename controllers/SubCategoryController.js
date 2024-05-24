@@ -24,7 +24,7 @@ const createSubCategory =async (req,res)=>{
 
   const getAllSubCategories =async (req,res)=>{
     try {
-        const subcategories = await SubCategory.find({},{password:0}); // Exclude the password field
+        const subcategories = await SubCategory.find({}); // Exclude the password field
         res.status(200).json(subcategories);
       } catch (error) {
         res.status(500).json({ message: 'Error occurred while fetching subcategories' });

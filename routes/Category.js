@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Category = require('../models/Category')
 const multer = require('multer')
+require('dotenv').config()
 
 
 
@@ -33,7 +34,7 @@ router.put('/updatecategoryimage',upload.any('image'),async (req, res) => {
 
          await Category.findByIdAndUpdate(
             id, { 
-              image: 'http://192.168.1.20:8000/uploads/category_image/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/category_image/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

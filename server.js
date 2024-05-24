@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const morgan = require ('morgan')
 const bodyParser = require('body-parser')
 const app = express()
+require('dotenv').config()
 
 const AuthRoute = require ('./routes/Auth')
 const cartRoute = require("./routes/cart");
@@ -14,10 +15,10 @@ const SubCategoryRoutes = require ('./routes/SubCategory')
 const SupplierRoutes = require('./routes/SupplierRoutes');
 const PromotionRoutes = require('./routes/Promotion');
 const ReviewRoute = require ('./routes/Review')
-
+const ServiceCategory = require ('./routes/ServiceCategory')
  const SalesRoutes = require('./routes/Sales');
  const RecRoutes = require ('./routes/ReclamationRoutes')
-
+ const Service = require ('./routes/Service')
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
@@ -31,7 +32,9 @@ app.use("/uploads/color_files", express.static('uploads/color_files'));
 app.use("/uploads/suppliers",express.static('uploads/suppliers'));
 app.use("/uploads/reviews",express.static('uploads/reviews'));
 app.use("/uploads/category_image",express.static('uploads/category_image'));
+app.use("/uploads/service_category_image",express.static('uploads/service_category_image'));
 app.use("/uploads/subcategory_image",express.static('uploads/subcategory_image'));
+app.use("/uploads/service_image",express.static('uploads/service_image'));
 
 
 
@@ -50,11 +53,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-
-const PORT = process.env.PORT || 8000
-
-app.listen(PORT, ()=>{
-    console.log(`server run on port ${PORT}`)
+app.listen(process.env.PORT, ()=>{
+    console.log(`server run on port ${process.env.PORT}`)
 })
 
 app.use('/api', AuthRoute)
@@ -68,5 +68,6 @@ app.use('/api', SupplierRoutes);
 app.use('/api', PromotionRoutes);
 app.use('/api', ReviewRoute)
 app.use('/api', SalesRoutes);
-
- app.use('/api', RecRoutes);
+app.use('/api', ServiceCategory);
+app.use('/api', RecRoutes);
+app.use('/api', Service);

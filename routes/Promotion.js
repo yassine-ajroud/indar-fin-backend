@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Promotion = require('../models/Promotion')
 const multer = require('multer')
+require('dotenv').config()
 
 
 const PromotionController = require ('../controllers/PromotionController')
@@ -34,7 +35,7 @@ router.put('/updatepromotionimage',upload.any('image'),async (req, res) => {
 
          await Promotion.findByIdAndUpdate(
             id, { 
-              image: 'http://192.168.1.20:8000/uploads/promotions/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/promotions/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

@@ -3,6 +3,7 @@ const router = express.Router()
 const Product = require('../models/Product')
 const Product3D = require('../models/Product3D')
 const multer = require('multer')
+require('dotenv').config()
 
 
 const productController = require ('../controllers/ProductController')
@@ -39,7 +40,7 @@ router.put('/uploadcolorimage',upload1.any('image'),async (req, res) => {
   try {
        await Product3D.findByIdAndUpdate(
           id, { 
-            imageCouleurs: 'http://192.168.1.20:8000/uploads/color_images/'+colorname 
+            imageCouleurs: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/color_images/'+colorname 
       },)
       res.status(200).json({
           message : `image added `,
@@ -67,7 +68,7 @@ router.put('/uploadcolorfile',upload2.any('file'),async (req, res) => {
   try {
        await Product3D.findByIdAndUpdate(
           id, { 
-            image3D: 'http://192.168.1.20:8000/uploads/color_images/'+colorfile 
+            image3D: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/color_images/'+colorfile 
       },)
       res.status(200).json({
           message : `file added `,
@@ -97,7 +98,7 @@ router.put('/uploadprodcutsimage',upload.any('image'),async (req, res) => {
 
          await Product.findByIdAndUpdate(
             id, { 
-              image: 'http://192.168.1.20:8000/uploads/product_images/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/product_images/'+filename 
         },)
         res.status(200).json({
             message : `image added `,

@@ -5,6 +5,7 @@ const User = require('../models/User')
 const AuthController = require ('../controllers/AuthController')
 const  authenticate = require('../middleware/authenticate')
 const multer = require('multer')
+require('dotenv').config()
 
 router.post('/register', AuthController.register)
 router.post('/login', AuthController.login)
@@ -40,7 +41,7 @@ router.post('/updateImage',upload.any('image'),async (req, res) => {
 
          await User.findByIdAndUpdate(
             id, { 
-              imageUrl: 'http://192.168.1.20:8000/uploads/images/'+filename 
+              imageUrl: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/images/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

@@ -11,7 +11,8 @@ const  authenticate = require('../middleware/authenticate')
 
 router.post('/service/add', ServiceController.createService)
 router.get('/service/:id', authenticate,ServiceController.getServiceById)
-router.get('/service', authenticate,ServiceController.getAllServices)
+router.get('/service/user/:id', authenticate,ServiceController.getServiceByUserId)
+router.get('/service/all/:id', authenticate,ServiceController.getAllServices)
 router.put('/service/:id', authenticate,ServiceController.updateService)
 router.delete('/service/:id', authenticate,ServiceController.deleteService)
 
@@ -36,7 +37,7 @@ router.put('/addserviceimage',upload.any('image'),async (req, res) => {
     try {
          service= await Service.findOne({'_id':id});
          list=Array.from( service.images)
-         list.push('http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/service_image/'+filename)
+         list.push('http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/service_image/'+filename)
          console.log(list)
          await Service.findByIdAndUpdate(
             id, { 
@@ -71,7 +72,7 @@ router.put('/updateserviceimage',upload1.any('image'),async (req, res) => {
          service= await Service.findOne({'_id':id});
          list=Array.from( service.images)
          index=list.indexOf(oldimg)
-         list[index]='http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/service_image/'+filename1
+         list[index]='http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/service_image/'+filename1
          console.log(list)
          await Service.findByIdAndUpdate(
             id, { 

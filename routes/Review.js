@@ -34,7 +34,7 @@ router.put('/updateReviewimage',upload.any('image'),async (req, res) => {
 
          await Review.findByIdAndUpdate(
             id, { 
-              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/reviews/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/reviews/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

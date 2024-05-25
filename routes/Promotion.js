@@ -35,7 +35,7 @@ router.put('/updatepromotionimage',upload.any('image'),async (req, res) => {
 
          await Promotion.findByIdAndUpdate(
             id, { 
-              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/promotions/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/promotions/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

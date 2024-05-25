@@ -22,9 +22,20 @@ const createService =async (req,res)=>{
       }
   }
 
+  
+  const getServiceByUserId =async (req,res)=>{
+    try {
+        const service = await Service.findOne({userId:req.params.id}); // Exclude the password field
+        res.status(200).json(service);
+      } catch (error) {
+        res.status(500).json({ message: 'Error occurred while fetching service' });
+      }
+  }
+
+
   const getAllServices =async (req,res)=>{
     try {
-        const services = await Service.find({}); // Exclude the password field
+        const services = await Service.find({service:req.params.id}); // Exclude the password field
         res.status(200).json(services);
       } catch (error) {
         res.status(500).json({ message: 'Error occurred while fetching service' });
@@ -59,5 +70,5 @@ const createService =async (req,res)=>{
   }
 
 module.exports = {
-    createService,getServiceById,updateService,deleteService,getAllServices
+    createService,getServiceById,updateService,deleteService,getAllServices,getServiceByUserId
 }

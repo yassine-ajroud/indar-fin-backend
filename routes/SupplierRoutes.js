@@ -35,7 +35,7 @@ router.put('/updatesupplierimage',upload.any('image'),async (req, res) => {
 
          await Supplier.findByIdAndUpdate(
             id, { 
-              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/suppliers/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/suppliers/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

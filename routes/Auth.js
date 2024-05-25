@@ -41,7 +41,7 @@ router.post('/updateImage',upload.any('image'),async (req, res) => {
 
          await User.findByIdAndUpdate(
             id, { 
-              imageUrl: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/images/'+filename 
+              imageUrl: 'http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/images/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

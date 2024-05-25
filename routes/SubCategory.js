@@ -35,7 +35,7 @@ router.put('/updatesubcategoryimage',upload.any('image'),async (req, res) => {
 
          await SubCategory.findByIdAndUpdate(
             id, { 
-              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.IP_ADDRESS+'/uploads/subcategory_image/'+filename 
+              image: 'http://'+process.env.IP_ADDRESS+':'+process.env.PORT+'/uploads/subcategory_image/'+filename 
         },)
         res.status(200).json({
             message : `image updated `,

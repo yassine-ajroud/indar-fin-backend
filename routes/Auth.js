@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
+const Fournisseur = require('../models/Fournisseur')
+
+
 
 const AuthController = require ('../controllers/AuthController')
 const  authenticate = require('../middleware/authenticate')
@@ -8,6 +11,7 @@ const multer = require('multer')
 require('dotenv').config()
 
 router.post('/register', AuthController.register)
+router.post('/registerFrourni', AuthController.registerFrourni)
 router.post('/login', AuthController.login)
 router.post('/forgetPassword', AuthController.forgetPassword)
 router.post('/VerifCode', AuthController.VerifCode)

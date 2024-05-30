@@ -1,4 +1,6 @@
 const User = require('../models/User')
+const Fournisseur = require('../models/Fournisseur')
+
 const bycrypt = require('bcryptjs')
 const jwt  = require ('jsonwebtoken')
 const moment = require('moment')
@@ -46,6 +48,41 @@ const register =async (req,res)=> {
         })
     }
 }
+
+  const registerFrourni =async (req,res)=> {
+    var n = await Fournisseur.countDocuments({email:req.body.email},{ limit: 1 });
+    if(n==0){
+        bycrypt.hash(req.body.password,10,function(err,hashedPass){
+            if(err){
+                res.status(500).json({
+                    error :err
+                })
+            }
+            let fournisseur = new Fournisseur ({
+                name : req.body.name,
+                email : req.body.email,
+                password : req.body.password
+            })
+            fournisseur.save().then(fournisseur => {
+                res.status(201).json ({
+                    message :"user Added Successfully",
+                    "uId":Fournisseur.id
+                })
+            })
+            .catch (error =>{
+                res.status(500).json({
+                    message : "error occured"
+                })
+            })
+        })
+    }else{
+        res.status(403).json({
+            message : "Fournisseur already exist"
+        })
+    }
+}
+
+
 
 const login = (req, res) => {
    var email = req.body.email;
@@ -469,5 +506,5 @@ const updatepassword = async (req,res)=>{
   };
   
 module.exports = {
-    register, login,forgetPassword,Pay,profilgetById,UpdateProfil,Resetpassword,VerifCode,refreshtoken,banUser,getAllUsers,deleteUser,updatepassword
+    register, login,forgetPassword,Pay,profilgetById,UpdateProfil,Resetpassword,VerifCode,refreshtoken,banUser,getAllUsers,deleteUser,updatepassword,registerFrourni
 }

@@ -61,12 +61,12 @@ const register =async (req,res)=> {
             let fournisseur = new Fournisseur ({
                 name : req.body.name,
                 email : req.body.email,
-                password : req.body.password
+                password : hashedPass
             })
-            fournisseur.save().then(fournisseur => {
+            fournisseur.save().then(f => {
                 res.status(201).json ({
                     message :"user Added Successfully",
-                    "uId":Fournisseur.id
+                    "uId":f.id
                 })
             })
             .catch (error =>{
